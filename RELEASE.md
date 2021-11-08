@@ -20,7 +20,9 @@ Release cadence of first pre-releases being cut is 6 weeks.
 | v0.50   | 2021-08-11                                 | Pawel Krupa (GitHub: @paulfantom)       |
 | v0.51   | 2021-09-22                                 | Simon Pasquier (GitHub: @simonpasquier) |
 | v0.52   | 2021-11-03                                 | Filip Petkovski (Github: @fpetkovski)   |
-| v0.53   | 2021-12-15                                 | **searching for volunteer**             |
+| v0.53   | 2021-12-15                                 | Simon Pasquier (GitHub: @simonpasquier) |
+| v0.54   | 2022-01-26                                 | **searching for volunteer**             |
+| v0.55   | 2022-03-09                                 | **searching for volunteer**             |
 
 # How to cut a new release
 
@@ -84,6 +86,11 @@ Create a PR for the changes to be reviewed.
 ## Publish the new release
 
 For new minor and major releases, create the `release-<major>.<minor>` branch starting at the PR merge commit.
+Push the branch to the remote repository with
+
+```
+git push origin release-<major>.<minor>
+```
 
 From now on, all work happens on the `release-<major>.<minor>` branch.
 
@@ -108,9 +115,5 @@ For patch releases, submit a pull request to merge back the release branch into 
 ## Update website
 
 Bump the operator's version in the [website](https://github.com/prometheus-operator/website/blob/main/data/prometheusOperator.json) repository.
-
-## Update kube-prometheus
-
-Bump the versions of `github.com/prometheus-operator/prometheus-operator` in [prometheus-operator/kube-prometheus](https://github.com/prometheus-operator/kube-prometheus) by triggering the ["Upgrade to latest versions"](https://github.com/prometheus-operator/kube-prometheus/actions/workflows/versions.yaml) workflow.
 
 Take a breath. You're done releasing.
